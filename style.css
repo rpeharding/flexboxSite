@@ -1,0 +1,144 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Gabarito", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-wrap: wrap;
+  }
+}
+
+/* header and nav */
+
+.logo {
+  width: 18rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 1.8rem 4rem;
+}
+
+.nav-list li:hover {
+  text-decoration: underline;
+  color: #068386;
+}
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("hero-image.jpg");
+  min-height: 50vh;
+  align-self: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+}
+
+.hero-text {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.hero-header {
+  font-size: 5rem;
+  text-align: center;
+}
+
+button {
+  background-color: #068386;
+  border: 0px;
+  border-radius: 4rem;
+  color: white;
+  padding: 1rem 4rem;
+  font-weight: 600;
+  margin: 2rem 0rem;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #41c2c2;
+  color: #181c1d;
+  transform: scale(1.05);
+}
+
+/* cards */
+
+.adventure-cards {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 5rem 0rem;
+  color: #181c1d;
+}
+
+.card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 30rem;
+  margin: 2rem 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 2rem 2rem 0rem 0rem;
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  color: #181c1d;
+  padding: 1rem 2rem 0rem 2rem;
+}
+.card p {
+  font-size: 1.8rem;
+  color: #181c1d;
+  font-weight: 300;
+  padding: 0rem 2rem;
+}
+
+.card-tab {
+  display: inline-flex;
+  background-color: #eab99b;
+  border-radius: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #068386;
+  padding: 2rem;
+  text-align: center;
+}
