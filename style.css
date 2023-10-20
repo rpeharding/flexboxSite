@@ -5,24 +5,20 @@ html {
   font-family: "Gabarito", sans-serif;
 }
 
+h1 {
+  display: none;
+}
+
 .container {
-  display: flex;
-  justify-content: center;
   width: 100rem;
   max-width: 100%;
   margin: auto;
 }
 
-@media (max-width: 900px) {
-  .container {
-    flex-wrap: wrap;
-  }
-}
-
 /* header and nav */
 
 .logo {
-  width: 18rem;
+  width: 200px;
 }
 
 .header {
@@ -98,10 +94,11 @@ button:hover {
 }
 
 .card {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: #959da533 0px 8px 24px;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1 1 30rem;
   margin: 2rem 1.5rem;
   transition: all 0.3s ease-in-out;
@@ -114,7 +111,7 @@ button:hover {
   border-radius: 2rem 2rem 0rem 0rem;
 }
 
-.card h2 {
+.card h3 {
   font-size: 2.2rem;
   color: #181c1d;
   padding: 1rem 2rem 0rem 2rem;
@@ -126,7 +123,7 @@ button:hover {
   padding: 0rem 2rem;
 }
 
-.card-tab {
+.card-link p:nth-of-type(2) {
   display: inline-flex;
   background-color: #eab99b;
   border-radius: 2rem;
@@ -140,4 +137,22 @@ footer {
   background-color: #068386;
   padding: 2rem;
   text-align: center;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .logo {
+    width: 18rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
