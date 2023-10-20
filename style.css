@@ -1,8 +1,45 @@
+/* fonts */
+
+/* gabarito-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: Gabarito;
+  font-style: normal;
+  font-weight: 400;
+  src: url("gabarito-v1-latin-regular.woff2") format("woff2");
+}
+/* gabarito-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: Gabarito;
+  font-style: normal;
+  font-weight: 500;
+  src: url("gabarito-v1-latin-500.woff2") format("woff2");
+}
+/* gabarito-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: Gabarito;
+  font-style: normal;
+  font-weight: 600;
+  src: url("gabarito-v1-latin-600.woff2") format("woff2");
+}
+/* gabarito-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: Gabarito;
+  font-style: normal;
+  font-weight: 700;
+  src: url("gabarito-v1-latin-700.woff2") format("woff2");
+}
+
+/* general rules */
+
 body,
 html {
   height: 100%;
   margin: 0;
-  font-family: "Gabarito", sans-serif;
+  font-family: Gabarito, sans-serif;
 }
 
 h1 {
@@ -18,21 +55,20 @@ h1 {
 /* header and nav */
 
 .logo {
-  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header img {
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 .nav-list {
   display: flex;
   gap: 2rem;
   align-items: center;
-  margin: 0;
-  padding: 1.8rem 4rem;
+  justify-content: center;
 }
 
 .nav-list li:hover {
@@ -59,11 +95,11 @@ h1 {
   color: white;
   font-size: 2rem;
   text-align: center;
+  font-family: Gabarito, sans-serif;
 }
 
-.hero-header {
+.hero-text h2 {
   font-size: 5rem;
-  text-align: center;
 }
 
 button {
@@ -87,10 +123,9 @@ button:hover {
 
 .adventure-cards {
   text-align: center;
-  font-size: 2.4rem;
-  font-weight: 700;
   margin: 5rem 0rem;
   color: #181c1d;
+  font-size: 2.4rem;
 }
 
 .card {
@@ -102,6 +137,8 @@ button:hover {
   flex: 1 1 30rem;
   margin: 2rem 1.5rem;
   transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .card-img {
@@ -112,11 +149,13 @@ button:hover {
 }
 
 .card h3 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
   color: #181c1d;
   padding: 1rem 2rem 0rem 2rem;
 }
-.card p {
+
+.card p:nth-of-type(1) {
   font-size: 1.8rem;
   color: #181c1d;
   font-weight: 300;
@@ -126,7 +165,10 @@ button:hover {
 .card-link p:nth-of-type(2) {
   display: inline-flex;
   background-color: #eab99b;
-  border-radius: 2rem;
+  border-radius: 1.9rem;
+  height: 1;
+  font-size: 1.8rem;
+  padding: 0.2rem 1.2rem;
 }
 
 .card:hover {
@@ -139,20 +181,57 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 600px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  .logo {
-    width: 18rem;
-  }
+.overlay {
+  box-shadow: #959da533 0px 8px 24px;
+  border-radius: 2rem 2rem 0rem 0rem;
+  transition: all 0.3s ease-in-out;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 20rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+
+  background-color: #068386;
+  opacity: 85%;
+
+  transform: translateY(-100%);
+
+  transition: all 0.5s ease-in-out;
 }
 
-@media (min-width: 900px) {
+.overlay h3 {
+  color: white;
+}
+
+.container .card:hover .overlay {
+  transform: translateY(0);
+}
+
+/* I've only used one media query for 600px because it felt like repeating myself for 900px */
+
+@media screen and (min-width: 600px) {
   .container {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header img {
+    margin: initial;
+    padding: 0;
+  }
+  .nav-list {
+    margin: 0px 4rem;
   }
 }
